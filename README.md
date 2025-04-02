@@ -93,7 +93,7 @@ Implementar uma API Rest para o diagrama de banco de dados acima tomando por bas
 
 ## Acessando a API
 
-A API estará disponível em: http://localhost:8000/api
+A API estará disponível em: http://localhost:8000/api/*
 
 ### Endpoints
 #### Autenticação

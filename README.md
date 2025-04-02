@@ -83,13 +83,13 @@ Implementar uma API Rest para o diagrama de banco de dados acima tomando por bas
 
 7. Subo o bucket para upload das fotos:
 
-    docker-compose exec minio sh /docker-entrypoint-init.d/initialize.sh
-
-7. Popular o banco com algumas informações:
-
     - docker-compose exec minio mc alias set myminio http://minio:9000 minio minio123
     - docker-compose exec minio mc mb myminio/servidores
     - docker-compose exec minio mc anonymous set public myminio/servidores
+
+7. Popular o banco com algumas informações:
+
+    docker-compose exec app php artisan db:seed
 
 ## Acessando a API
 

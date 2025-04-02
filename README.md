@@ -8,45 +8,62 @@ API para gestão de servidores efetivos e temporários, unidades e lotações.
 - Docker Compose
 
 ## Requisitos
+
 ### Pré-requisitos:
+
 A. Antes de iniciar a realização do teste prático realize a leitura deste documento até o final.
+
 B. Utilizar linguagem de programação de acordo com o cargo escolhido;
-Executar em container um servidor Min.io para armazenamento de objetos S3 (https://min.io/);
+   Executar em container um servidor Min.io para armazenamento de objetos S3 (https://min.io/);
+
 C. Executar em container um servidor de banco de dados PostgreSQL em sua última versão.
+
 ### Requisitos Gerais:
+
 A. Implementar mecanismo de autorização e autenticação, bem como não permitir acesso ao endpoint a partir de domínios diversos do qual estará hospedado o serviço;
+
 B. A solução de autenticação deverá expirar a cada 5 minutos e oferecer a possibilidade de renovação do período;
+
 C. Implementar pelo menos os verbos post, put, get;
+
 D. Conter recursos de paginação em todas as consultas;
+
 E. Os dados produzidos deverão ser armazenados no servidor de banco de dados previamente criado em container;
+
 F. Orquestrar a solução final utilizando Docker Compose de modo que inclua todos os contêineres utilizados.
 
 ### Requisitos Específicos:
+
 Implementar uma API Rest para o diagrama de banco de dados acima tomando por base as seguintes orientações:
-Criar um CRUD para Servidor Efetivo, Servidor Temporário, Unidade e Lotação. Deverá ser contemplado a inclusão e edição dos dados das tabelas relacionadas;
-Criar um endpoint que permita consultar os servidores efetivos lotados em determinada unidade parametrizando a consulta pelo atributo unid_id;
-Retornar os seguintes campos: Nome, idade, unidade de lotação e fotografia;
-Criar um endpoint que permita consultar o endereço funcional (da unidade onde o servidor é lotado) a partir de uma parte do nome do servidor efetivo.
-Realizar o upload de uma ou mais fotografias enviando-as para o Min.IO;
-A recuperação das imagens deverá ser através de links temporários gerados pela biblioteca do Min.IO com tempo de expiração de 5 minutos.
+
+- Criar um CRUD para Servidor Efetivo, Servidor Temporário, Unidade e Lotação. Deverá ser contemplado a inclusão e edição dos dados das tabelas relacionadas;
+
+- Criar um endpoint que permita consultar os servidores efetivos lotados em determinada unidade parametrizando a consulta pelo atributo unid_id;
+  Retornar os seguintes campos: Nome, idade, unidade de lotação e fotografia;
+
+- Criar um endpoint que permita consultar o endereço funcional (da unidade onde o servidor é lotado) a partir de uma parte do nome do servidor efetivo.
+
+- Realizar o upload de uma ou mais fotografias enviando-as para o Min.IO;
+
+- A recuperação das imagens deverá ser através de links temporários gerados pela biblioteca do Min.IO com tempo de expiração de 5 minutos.
 
 ## Dados da Inscrição
 
-Nome do Candidato: EDSON LUIZ FERREIRA DOS SANTOS
-Email: edsonlf.santos@gmail.com
-Telefone: (31) 9 9343-3893
-Data da Inscrição: 01/04/2025
+- **Nome do Candidato:** EDSON LUIZ FERREIRA DOS SANTOS
+- **Email:** edsonlf.santos@gmail.com
+- **Telefone:** (31) 9 9343-3893
+- **Data da Inscrição:** 01/04/2025
 
 ## Instalação
 
 1. Clone o repositório:
    
-   git clone https://github.com/santoself/servidores-api.git
-   cd servidores-api
+   - git clone https://github.com/santoself/servidores-api.git
+   - cd servidores-api
 
 2. Copie o arquivo .env.example para .env:
 
-    cp .env.example .env
+    cp ./src/.env.example ./src/.env
     
 3. Construa e inicie os containers:
 

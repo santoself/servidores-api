@@ -87,7 +87,9 @@ Implementar uma API Rest para o diagrama de banco de dados acima tomando por bas
 
 7. Popular o banco com algumas informações:
 
-    docker-compose exec app php artisan db:seed
+    - docker-compose exec minio mc alias set myminio http://minio:9000 minio minio123
+    - docker-compose exec minio mc mb myminio/servidores
+    - docker-compose exec minio mc anonymous set public myminio/servidores
 
 ## Acessando a API
 
